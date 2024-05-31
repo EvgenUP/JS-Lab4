@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Library Demo</title>
+    <script src="sortLibrary.js"></script>
+</head>
+<body>
+    <h1>Sort Library Demo</h1>
+    <script>
+        // Генерація масиву з 100 цілих чисел
+        let array = Array.from({ length: 100 }, () => Math.floor(Math.random() * 200) - 100);
+
+        // Генерація розрідженого масиву з 100 цілих чисел
+        let sparseArray = array.slice();
+        for (let i = 0; i < sparseArray.length; i += 10) {
+            sparseArray[i] = undefined;
+        }
+
+        console.log("Original Array:", array);
+        console.log("Sparse Array:", sparseArray);
+
+        // Демонстрація сортування на нерозрідженому масиві
+        console.log("\nBubble Sort (Ascending):");
+        SortLibrary.bubbleSort([...array]);
+
+        console.log("\nSelection Sort (Ascending):");
+        SortLibrary.selectionSort([...array]);
+
+        console.log("\nInsertion Sort (Ascending):");
+        SortLibrary.insertionSort([...array]);
+
+        console.log("\nShell Sort (Ascending):");
+        SortLibrary.shellSort([...array]);
+
+        console.log("\nQuick Sort (Ascending):");
+        SortLibrary.quickSort([...array]);
+
+        // Демонстрація сортування на розрідженому масиві
+        console.log("\nBubble Sort (Sparse Array, Ascending):");
+        SortLibrary.bubbleSort([...sparseArray]);
+
+        console.log("\nSelection Sort (Sparse Array, Ascending):");
+        SortLibrary.selectionSort([...sparseArray]);
+
+        console.log("\nInsertion Sort (Sparse Array, Ascending):");
+        SortLibrary.insertionSort([...sparseArray]);
+
+        console.log("\nShell Sort (Sparse Array, Ascending):");
+        SortLibrary.shellSort([...sparseArray]);
+
+        console.log("\nQuick Sort (Sparse Array, Ascending):");
+        SortLibrary.quickSort([...sparseArray]);
+    </script>
+</body>
+</html>
+
